@@ -12,6 +12,7 @@ while True:
         passw = input("Contraseña: ")
         user = Login(nombre,passw)
         user.saludar()
+        user.saludar()
 
     elif lr == 2:
         nombre = input("Nombre de usuario: ")
