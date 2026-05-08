@@ -34,7 +34,7 @@ class Catalogo:
     def __init__(self):
         pass
     def ver_catalogo(self):
-
+        pass
         return NotImplementedError
     def añadir_obra_al_catalogo(self):
         pass

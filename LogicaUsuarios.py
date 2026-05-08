@@ -81,9 +81,3 @@ class Admin(Usuario, PermisoAdministrativo, PermisoLectura, PermisoVisualizar):
          super().__init__(_nombre,_edad,_gmail,_password)
 
          self.estado_cuenta = "Administrador"
-
-
-
-
-
-

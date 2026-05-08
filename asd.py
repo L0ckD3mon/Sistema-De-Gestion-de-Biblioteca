@@ -1,13 +1,43 @@
 from LogicaUsuarios import Nombre,Password,Gmail,Edad
+from Usuarios import  usuarios
 
+class Verificador(Password,Nombre):
+    def __init__(self,_nombre,_passw):
+        Nombre.__init__(self, _nombre)
+        Password.__init__(self, _passw)
+
+    def verificar_nombre(self):
+        for x in usuarios.values():
+
+            if self.nombre != x:
+                return False
+            elif self.nombre == x:
+                return True
+
+        return None
+
+
+    def verificar_pass(self):
+        for x in usuarios.values():
+
+            if self.passw != x:
+                return False
+            elif self.passw == x:
+                return True
+
+        return None
+def verificar_gmail(gmail):
+    if "@gmail.com" not in gmail:
+        return False
+    else:
+        return True
 
 class Login(Nombre,Password):
     def __init__(self,_nombre,_password):
         Nombre.__init__(self, _nombre)
         Password.__init__(self, _password)
 
-    def saludar(self):
-        print(f"Hola {self.nombre}, contraseña: {self.passw}")
+
 
 
 class Register(Nombre,Password,Gmail,Edad):
@@ -22,15 +52,3 @@ class Register(Nombre,Password,Gmail,Edad):
     def __repr__(self):
         return f"id"
 
-def verificar_pass():
-    pass
-
-
-def verificar_nombre():
-    pass
-
-def verificar_gmail(gmail):
-    if "@gmail.com" not in gmail:
-        return False
-    else:
-        return True
