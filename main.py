@@ -13,7 +13,7 @@ while True:
         passw = input("Contraseña: ")
         verificador_login = Verificador(nombre,passw)
 
-        if verificador_login.verificar_nombre() and verificador_login.verificar_pass():
+        if verificador_login.verificar_user():
             print("Te has logueado exitosamente")
             user = Login(nombre,passw)
             break
@@ -52,7 +52,7 @@ while True:
         passw = input("Contraseña: ")
         id+=1
         id_dicc +=1
-        new_usuario = Register(nombre,edad,mail,passw,id)
+        new_usuario = Register(nombre,edad,mail,passw,id,"Lector")
         almacenador = Almacenar_Datos_Registro
         datos = almacenador.zipear(new_usuario)
         usuarios[id_dicc] = dict(datos)
