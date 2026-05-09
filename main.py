@@ -1,5 +1,7 @@
 from asd import Login, Register, verificar_gmail, Verificador
 from Usuarios import usuarios, id, Almacenar_Datos_Registro, id_dicc
+from libros import rellenar_datos_nueva_obra, anadir_obra_al_catalogo, ver_catalogo, Libro, Revista, Articulo
+
 while True:
 
     try:
@@ -59,5 +61,52 @@ while True:
         print(usuarios)
 
 #Aqui empieza el menu despues de intentar loguearse y/o Registrarse
+while True:
+    try:
+        print("A que desea acceder?: \n1.Libros \n2.Revistas \n3.Articulos")
+        tipo_obra_acceso = int(input("----> "))
+        break
+    except:
+        print("Debe introducir un numero")
+        continue
+while True:
+    try:
+        print("1.Leer Obras \n2.Crear Obra")
+        leer_crear = int(input("----> "))
+    except:
+        print("Debe introducir un numero")
+        continue
+
+    if tipo_obra_acceso == 1:
+        if leer_crear == 1: # Leer libros
+            ver_catalogo()
+        if leer_crear == 2: # Crear libros
+
+            datos = rellenar_datos_nueva_obra(1)
+
+            libro = Libro(nombre = datos[0],fecha=datos[1],autor=[2])
+            libro = libro.obtener_datos()
+            anadir_obra_al_catalogo(libro)
+
+    elif tipo_obra_acceso == 2:
+        if leer_crear == 1: # Leer Revistas
+            ver_catalogo()
+        if leer_crear == 2: # Crear Revistas
+
+            datos = rellenar_datos_nueva_obra(2)
+
+            revista = Revista(nombre = datos[0],fecha=datos[1])
+            revista = revista.obtener_datos()
+            anadir_obra_al_catalogo(revista)
+    else:
+        if leer_crear == 1: # Leer Articulos
+            ver_catalogo()
+        if leer_crear == 2: # Crear Articulos
+
+            datos = rellenar_datos_nueva_obra(2)
+
+            articulo = Articulo(nombre = datos[0],autor = datos[1])
+            articulo = articulo.obtener_datos()
+            anadir_obra_al_catalogo(articulo)
 
 

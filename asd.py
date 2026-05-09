@@ -23,11 +23,6 @@ def establecer_estado(nuevo_estado):
     estado = nuevo_estado
     return estado
 
-
-
-
-
-
 class Login(Nombre,Password):
     def __init__(self,_nombre,_password):
         Nombre.__init__(self, _nombre)
