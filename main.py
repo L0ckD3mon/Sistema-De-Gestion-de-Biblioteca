@@ -69,44 +69,52 @@ while True:
     except:
         print("Debe introducir un numero")
         continue
-while True:
-    try:
-        print("1.Leer Obras \n2.Crear Obra")
-        leer_crear = int(input("----> "))
-    except:
-        print("Debe introducir un numero")
-        continue
 
-    if tipo_obra_acceso == 1:
-        if leer_crear == 1: # Leer libros
-            ver_catalogo()
-        if leer_crear == 2: # Crear libros
+    while True:
+        try:
+            print("1.Leer Obras \n2.Crear Obra \n3.Salir")
+            leer_crear = int(input("----> "))
+        except:
+            print("Debe introducir un numero")
+            continue
 
-            datos = rellenar_datos_nueva_obra(1)
+        if tipo_obra_acceso == 1:
+            if leer_crear == 1: # Leer libros
+                ver_catalogo()
+                acceder_libro = input("Seleccione el numero asociado a el libro que quiere leer")
 
-            libro = Libro(nombre = datos[0],fecha=datos[1],autor=[2])
-            libro = libro.obtener_datos()
-            anadir_obra_al_catalogo(libro)
 
-    elif tipo_obra_acceso == 2:
-        if leer_crear == 1: # Leer Revistas
-            ver_catalogo()
-        if leer_crear == 2: # Crear Revistas
 
-            datos = rellenar_datos_nueva_obra(2)
+            if leer_crear == 2: # Crear libros
 
-            revista = Revista(nombre = datos[0],fecha=datos[1])
-            revista = revista.obtener_datos()
-            anadir_obra_al_catalogo(revista)
-    else:
-        if leer_crear == 1: # Leer Articulos
-            ver_catalogo()
-        if leer_crear == 2: # Crear Articulos
+                datos = rellenar_datos_nueva_obra(1)
 
-            datos = rellenar_datos_nueva_obra(2)
+                libro = Libro(nombre = datos[0],fecha=datos[1],autor=datos[2])
+                libro = libro.obtener_datos()
+                anadir_obra_al_catalogo(libro)
 
-            articulo = Articulo(nombre = datos[0],autor = datos[1])
-            articulo = articulo.obtener_datos()
-            anadir_obra_al_catalogo(articulo)
+        elif tipo_obra_acceso == 2:
+            if leer_crear == 1: # Leer Revistas
+                ver_catalogo()
+            if leer_crear == 2: # Crear Revistas
+
+                datos = rellenar_datos_nueva_obra(2)
+
+                revista = Revista(nombre = datos[0],fecha=datos[1])
+                revista = revista.obtener_datos()
+                anadir_obra_al_catalogo(revista)
+        elif tipo_obra_acceso == 3:
+            if leer_crear == 1: # Leer Articulos
+                ver_catalogo()
+            if leer_crear == 2: # Crear Articulos
+
+                datos = rellenar_datos_nueva_obra(2)
+
+                articulo = Articulo(nombre = datos[0],autor = datos[1])
+                articulo = articulo.obtener_datos()
+                anadir_obra_al_catalogo(articulo)
+
+        else:
+            break
 
 

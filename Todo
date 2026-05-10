@@ -1,0 +1,11 @@
+
+Todo:
+-Hacer que al crear un libro puedas agregarle la informacion sobre el libro, estilo premisa 
+-OPCIONAL: añadir textos de esos libros 
+-Añadir opcion de modificar libros
+-al usar ver catalogo, hacer que se vea estilo asi:
+(tipo de obra): (nombre)
+ Año: {año}
+autor: {autor}
+para justo despues este la opcion de ver premisa
+   
