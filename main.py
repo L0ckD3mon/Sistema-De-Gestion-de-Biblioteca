@@ -65,7 +65,7 @@ while True:
     try:
         print("A que desea acceder?: \n1.Libros \n2.Revistas \n3.Articulos")
         tipo_obra_acceso = int(input("----> "))
-        break
+
     except:
         print("Debe introducir un numero")
         continue
@@ -81,9 +81,6 @@ while True:
         if tipo_obra_acceso == 1:
             if leer_crear == 1: # Leer libros
                 ver_catalogo()
-                acceder_libro = input("Seleccione el numero asociado a el libro que quiere leer")
-
-
 
             if leer_crear == 2: # Crear libros
 
@@ -92,6 +89,9 @@ while True:
                 libro = Libro(nombre = datos[0],fecha=datos[1],autor=datos[2])
                 libro = libro.obtener_datos()
                 anadir_obra_al_catalogo(libro)
+
+            elif leer_crear == 3:
+                break
 
         elif tipo_obra_acceso == 2:
             if leer_crear == 1: # Leer Revistas
@@ -103,6 +103,8 @@ while True:
                 revista = Revista(nombre = datos[0],fecha=datos[1])
                 revista = revista.obtener_datos()
                 anadir_obra_al_catalogo(revista)
+            elif leer_crear == 3:
+                break
         elif tipo_obra_acceso == 3:
             if leer_crear == 1: # Leer Articulos
                 ver_catalogo()
@@ -113,7 +115,8 @@ while True:
                 articulo = Articulo(nombre = datos[0],autor = datos[1])
                 articulo = articulo.obtener_datos()
                 anadir_obra_al_catalogo(articulo)
-
+            elif leer_crear == 3:
+                break
         else:
             break
 

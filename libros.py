@@ -50,9 +50,13 @@ class Articulo(Nombre, Autor):
 def ver_catalogo():
     if catalogo_libros == []:
         print("Catalogo sin obras")
+        return "finish"
+
     else:
+        n = 0
         for x in catalogo_libros:
-            print(x)
+            n+=1
+            print(f"{n}. {x}")
 
 def anadir_obra_al_catalogo(objeto):
         nuevo_libro = repr(objeto)
